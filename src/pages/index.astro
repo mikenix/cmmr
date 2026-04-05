@@ -13,38 +13,157 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<h1>CMMR LLC</h1>
+				<p class="tagline">Consulting &amp; Project Incubation</p>
+				<p class="hero-description">
+					We partner with founders and organizations to turn ambitious ideas into
+					scalable, market-ready ventures.
+				</p>
+			</section>
+
+			<section class="services">
+				<h2>What We Do</h2>
+				<div class="services-grid">
+					<div class="service-card">
+						<h3>Strategic Consulting</h3>
+						<p>
+							Expert guidance on technology strategy, architecture decisions, and
+							go-to-market planning to accelerate your path from concept to launch.
+						</p>
+					</div>
+					<div class="service-card">
+						<h3>Project Incubation</h3>
+						<p>
+							We take early-stage ideas and build them into viable products — providing
+							the technical foundation, prototyping, and validation needed to succeed.
+						</p>
+					</div>
+					<div class="service-card">
+						<h3>Technical Leadership</h3>
+						<p>
+							Fractional CTO and engineering leadership services for teams that need
+							senior technical direction without a full-time hire.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="approach">
+				<h2>Our Approach</h2>
+				<p>
+					Every engagement starts with understanding the problem. We dig into your domain,
+					validate assumptions, and build iteratively — shipping early and often. Whether
+					you need a prototype in weeks or a long-term technology partner, CMMR adapts to
+					your pace and priorities.
+				</p>
+			</section>
+
+			<section class="cta">
+				<h2>Let's Build Something</h2>
+				<p>
+					Have a project in mind? We'd love to hear about it.
+				</p>
+				<a href="mailto:hello@cmmr.com" class="cta-button">Get in Touch</a>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 4rem 0 3rem;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.25rem;
+	}
+	.tagline {
+		font-size: 1.4rem;
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+		font-weight: 500;
+	}
+	.hero-description {
+		max-width: 560px;
+		margin: 0 auto;
+		font-size: 1.1rem;
+		line-height: 1.8;
+	}
+
+	section {
+		margin-bottom: 3rem;
+	}
+
+	.services h2,
+	.approach h2,
+	.cta h2 {
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+	}
+	.service-card {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: 0 2px 8px rgba(var(--gray), 10%);
+	}
+	.service-card h3 {
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+	}
+	.service-card p {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.approach {
+		max-width: 640px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.approach p {
+		line-height: 1.8;
+	}
+
+	.cta {
+		text-align: center;
+		padding: 2rem 0;
+	}
+	.cta-button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.75rem 2rem;
+		background: var(--accent);
+		color: #fff;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1rem;
+		transition: background 0.2s;
+	}
+	.cta-button:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		.tagline {
+			font-size: 1.1rem;
+		}
+	}
+</style>
