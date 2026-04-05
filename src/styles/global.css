@@ -5,16 +5,22 @@
  */
 
 :root {
-	--accent: #1a73e8;
-	--accent-dark: #0d47a1;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--accent: #0f766e;
+	--accent-dark: #134e4a;
+	--ink: 13, 21, 36;
+	--muted: 95, 112, 139;
+	--surface: 239, 244, 246;
+	--surface-deep: 219, 230, 234;
+	--line: 208, 219, 224;
+	--elevation: 0 16px 42px rgba(8, 23, 41, 0.14);
+	--box-shadow: 0 16px 42px rgba(8, 23, 41, 0.14);
+	--radius-lg: 18px;
+	--radius-md: 12px;
+	--black: var(--ink);
+	--gray: var(--muted);
+	--gray-light: var(--surface-deep);
+	--gray-dark: var(--ink);
+	--gray-gradient: rgba(var(--surface), 0.75), #fff;
 }
 @font-face {
 	font-family: "Atkinson";
@@ -35,19 +41,21 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background:
+		radial-gradient(120% 70% at 10% 0%, rgba(15, 118, 110, 0.16) 0%, rgba(15, 118, 110, 0) 55%),
+		radial-gradient(120% 70% at 90% 20%, rgba(12, 74, 110, 0.12) 0%, rgba(12, 74, 110, 0) 55%),
+		linear-gradient(180deg, #f5fbfa 0%, #f7fafc 40%, #ffffff 100%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
+	color: rgb(var(--ink));
+	font-size: 19px;
 	line-height: 1.7;
 }
 main {
-	width: 720px;
+	width: 1100px;
 	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 2.5em 1em 4em;
 }
 h1,
 h2,
@@ -56,7 +64,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: rgb(var(--ink));
 	line-height: 1.2;
 }
 h1 {
@@ -80,9 +88,11 @@ b {
 }
 a {
 	color: var(--accent);
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 3px;
 }
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 p {
 	margin-bottom: 1em;
@@ -107,7 +117,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: rgb(var(--surface));
 	border-radius: 2px;
 }
 pre {
@@ -125,14 +135,14 @@ blockquote {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid rgb(var(--line));
 }
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
 	main {
-		padding: 1em;
+		padding: 1em 0.65em 2.5em;
 	}
 }
 

@@ -13,58 +13,86 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<section class="hero">
-				<h1>CMMR LLC</h1>
-				<p class="tagline">Consulting &amp; Project Incubation</p>
-				<p class="hero-description">
-					We partner with founders and organizations to turn ambitious ideas into
-					scalable, market-ready ventures.
-				</p>
+			<section class="hero reveal">
+				<div class="hero-copy">
+					<p class="kicker">CMMR LLC</p>
+					<h1>We incubate ambitious ideas into working companies.</h1>
+					<p class="hero-description">
+						Consulting for complex builds. Incubation for early-stage bets. CMMR helps
+						teams go from messy concept to validated product with practical velocity.
+					</p>
+					<div class="hero-actions">
+						<a href="mailto:hello@cmmr.com" class="primary-button">Start a Conversation</a>
+						<a href="/about" class="secondary-button">How We Work</a>
+					</div>
+				</div>
+				<div class="hero-panel">
+					<p class="panel-label">Operator-Led Execution</p>
+					<ul>
+						<li>0 to 1 product incubation</li>
+						<li>Technical strategy and architecture</li>
+						<li>Fractional CTO support</li>
+						<li>Delivery acceleration for stuck teams</li>
+					</ul>
+				</div>
 			</section>
 
-			<section class="services">
-				<h2>What We Do</h2>
+			<section class="trust reveal" style="--d: 0.08s">
+				<p>Built for founders, operators, and teams shipping under real constraints.</p>
+			</section>
+
+			<section class="services reveal" style="--d: 0.12s">
+				<h2>Services</h2>
 				<div class="services-grid">
-					<div class="service-card">
+					<article class="service-card">
+						<p class="service-index">01</p>
 						<h3>Strategic Consulting</h3>
 						<p>
-							Expert guidance on technology strategy, architecture decisions, and
-							go-to-market planning to accelerate your path from concept to launch.
+							Roadmaps, system design, and execution planning that align technical choices
+							with business goals.
 						</p>
-					</div>
-					<div class="service-card">
+					</article>
+					<article class="service-card">
+						<p class="service-index">02</p>
 						<h3>Project Incubation</h3>
 						<p>
-							We take early-stage ideas and build them into viable products — providing
-							the technical foundation, prototyping, and validation needed to succeed.
+							Rapid concept validation, prototype development, and launch-ready buildouts
+							for new ventures.
 						</p>
-					</div>
-					<div class="service-card">
-						<h3>Technical Leadership</h3>
+					</article>
+					<article class="service-card">
+						<p class="service-index">03</p>
+						<h3>Fractional Leadership</h3>
 						<p>
-							Fractional CTO and engineering leadership services for teams that need
-							senior technical direction without a full-time hire.
+							Interim technical leadership for teams that need senior decision making,
+							mentoring, and delivery discipline.
 						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="process reveal" style="--d: 0.16s">
+				<h2>Engagement Model</h2>
+				<div class="process-grid">
+					<div>
+						<p class="step">Discover</p>
+						<p>We map risks, constraints, and opportunity surface area fast.</p>
+					</div>
+					<div>
+						<p class="step">Design</p>
+						<p>We architect the leanest path to a meaningful product milestone.</p>
+					</div>
+					<div>
+						<p class="step">Deliver</p>
+						<p>We ship tangible outcomes, then iterate with real user and market signal.</p>
 					</div>
 				</div>
 			</section>
 
-			<section class="approach">
-				<h2>Our Approach</h2>
-				<p>
-					Every engagement starts with understanding the problem. We dig into your domain,
-					validate assumptions, and build iteratively — shipping early and often. Whether
-					you need a prototype in weeks or a long-term technology partner, CMMR adapts to
-					your pace and priorities.
-				</p>
-			</section>
-
-			<section class="cta">
-				<h2>Let's Build Something</h2>
-				<p>
-					Have a project in mind? We'd love to hear about it.
-				</p>
-				<a href="mailto:hello@cmmr.com" class="cta-button">Get in Touch</a>
+			<section class="cta reveal" style="--d: 0.2s">
+				<h2>Bring us the project that feels hard to start.</h2>
+				<p>We are best when speed, clarity, and execution all matter at once.</p>
+				<a href="mailto:hello@cmmr.com" class="primary-button">Book an Intro Call</a>
 			</section>
 		</main>
 		<Footer />
@@ -73,97 +101,203 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 	.hero {
-		text-align: center;
-		padding: 4rem 0 3rem;
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 1.5rem;
+		align-items: stretch;
+		padding-top: 1.1rem;
+	}
+	.hero-copy,
+	.hero-panel {
+		background: rgba(255, 255, 255, 0.82);
+		border: 1px solid rgba(var(--line), 0.9);
+		border-radius: var(--radius-lg);
+		padding: 1.5rem;
+		box-shadow: var(--elevation);
+	}
+	.kicker {
+		margin: 0;
+		font-size: 0.86rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--accent-dark);
 	}
 	.hero h1 {
-		font-size: 3.5rem;
-		letter-spacing: 0.05em;
-		margin-bottom: 0.25rem;
-	}
-	.tagline {
-		font-size: 1.4rem;
-		color: rgb(var(--gray));
-		margin-bottom: 1.5rem;
-		font-weight: 500;
+		font-size: clamp(2rem, 4vw, 3.4rem);
+		margin: 0.35rem 0 0.6rem;
+		max-width: 18ch;
 	}
 	.hero-description {
-		max-width: 560px;
-		margin: 0 auto;
+		margin: 0;
+		max-width: 48ch;
 		font-size: 1.1rem;
-		line-height: 1.8;
+		line-height: 1.7;
 	}
-
-	section {
-		margin-bottom: 3rem;
+	.hero-actions {
+		display: flex;
+		gap: 0.8rem;
+		margin-top: 1.25rem;
+		flex-wrap: wrap;
 	}
-
-	.services h2,
-	.approach h2,
-	.cta h2 {
-		text-align: center;
-		margin-bottom: 1.5rem;
+	.primary-button,
+	.secondary-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.72rem 1.1rem;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
 	}
-
-	.services-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 1.5rem;
-	}
-	.service-card {
-		background: #fff;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 12px;
-		padding: 1.5rem;
-		box-shadow: 0 2px 8px rgba(var(--gray), 10%);
-	}
-	.service-card h3 {
-		margin-bottom: 0.5rem;
-		font-size: 1.25rem;
-	}
-	.service-card p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-		line-height: 1.6;
-	}
-
-	.approach {
-		max-width: 640px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-	}
-	.approach p {
-		line-height: 1.8;
-	}
-
-	.cta {
-		text-align: center;
-		padding: 2rem 0;
-	}
-	.cta-button {
-		display: inline-block;
-		margin-top: 1rem;
-		padding: 0.75rem 2rem;
+	.primary-button {
 		background: var(--accent);
 		color: #fff;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1rem;
-		transition: background 0.2s;
 	}
-	.cta-button:hover {
+	.primary-button:hover {
 		background: var(--accent-dark);
 		color: #fff;
 	}
-
-	@media (max-width: 720px) {
-		.hero h1 {
-			font-size: 2.5rem;
+	.secondary-button {
+		border: 1px solid rgba(var(--line), 1);
+		color: rgb(var(--ink));
+		background: #fff;
+	}
+	.secondary-button:hover {
+		border-color: var(--accent);
+		color: var(--accent-dark);
+	}
+	.hero-panel {
+		display: grid;
+		align-content: center;
+	}
+	.panel-label {
+		margin: 0;
+		font-size: 0.85rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgb(var(--muted));
+	}
+	.hero-panel ul {
+		margin: 0.8rem 0 0;
+		padding-left: 1.1rem;
+	}
+	.hero-panel li {
+		margin-bottom: 0.45rem;
+	}
+	section {
+		margin-top: 2rem;
+	}
+	.trust {
+		text-align: center;
+		padding: 1rem;
+		border-radius: var(--radius-md);
+		border: 1px solid rgba(var(--line), 1);
+		background: rgba(var(--surface), 0.75);
+	}
+	.trust p {
+		margin: 0;
+		font-weight: 700;
+		color: rgb(var(--muted));
+	}
+	.services h2,
+	.process h2,
+	.cta h2 {
+		text-align: center;
+		margin-bottom: 1.2rem;
+	}
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	.service-card {
+		background: rgba(255, 255, 255, 0.88);
+		border: 1px solid rgba(var(--line), 1);
+		border-radius: var(--radius-md);
+		padding: 1.5rem;
+		box-shadow: 0 10px 22px rgba(6, 32, 51, 0.08);
+	}
+	.service-index {
+		margin: 0 0 0.6rem;
+		font-size: 0.8rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		color: var(--accent);
+	}
+	.service-card h3 {
+		margin-bottom: 0.45rem;
+		font-size: 1.3rem;
+	}
+	.service-card p {
+		margin: 0;
+		color: rgb(var(--muted));
+		font-size: 0.98rem;
+	}
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	.process-grid > div {
+		border-radius: var(--radius-md);
+		border: 1px solid rgba(var(--line), 1);
+		background: rgba(255, 255, 255, 0.84);
+		padding: 1.2rem;
+	}
+	.step {
+		margin: 0;
+		font-size: 0.85rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent-dark);
+	}
+	.process-grid p:last-child {
+		margin: 0.35rem 0 0;
+		color: rgb(var(--muted));
+	}
+	.cta {
+		text-align: center;
+		padding: 1.6rem 1rem;
+		border-radius: var(--radius-lg);
+		border: 1px solid rgba(var(--line), 1);
+		background: rgba(15, 118, 110, 0.08);
+	}
+	.cta p {
+		max-width: 48ch;
+		margin: 0 auto 1rem;
+		color: rgb(var(--muted));
+	}
+	.reveal {
+		opacity: 0;
+		transform: translateY(14px);
+		animation: rise 0.6s ease forwards;
+		animation-delay: var(--d, 0s);
+	}
+	@keyframes rise {
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
-		.tagline {
-			font-size: 1.1rem;
+	}
+	@media (max-width: 720px) {
+		.hero {
+			grid-template-columns: 1fr;
+		}
+		.hero h1 {
+			font-size: 2.25rem;
+		}
+		.services-grid,
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
+		.hero-copy,
+		.hero-panel,
+		.service-card,
+		.process-grid > div {
+			padding: 1.1rem;
 		}
 	}
 </style>

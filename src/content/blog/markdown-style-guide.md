@@ -1,43 +1,56 @@
 ---
-title: "Markdown Style Guide"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jun 19 2024"
+title: "How We Write Technical Strategy Memos"
+description: "A lightweight structure for decisions that engineering, product, and founders can all align around."
+pubDate: "Apr 02 2026"
 heroImage: "/blog-placeholder-1.jpg"
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+At CMMR we use short strategy memos to make hard product and technical decisions explicit.
 
-## Headings
+Each memo should answer four questions:
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+## 1) What decision are we making?
 
-# H1
+Be precise. One memo, one decision.
 
-## H2
+## 2) What are the options?
 
-### H3
+List the realistic options and include tradeoffs.
 
-#### H4
+## 3) Why this option now?
 
-##### H5
+Tie rationale to current constraints: timeline, team capacity, and risk.
 
-###### H6
+## 4) What does success look like?
 
-## Paragraph
+Include measurable outcomes and a review date.
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-## Images
-
-### Syntax
+### Memo Skeleton
 
 ```markdown
-![Alt text](./full/or/relative/path/of/image)
+# Decision
+
+## Context
+- What is changing?
+- Why now?
+
+## Options
+1. Option A
+2. Option B
+
+## Decision
+- Selected option
+- Why
+
+## Risks and Mitigations
+- Risk 1 -> Mitigation
+
+## Success Criteria
+- Metric
+- Review date
 ```
 
-### Output
+Good memos reduce rework and increase team trust. They are a small habit with large leverage.
 
 ![blog placeholder](/blog-placeholder-about.jpg)
 

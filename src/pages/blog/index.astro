@@ -17,18 +17,31 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 1100px;
+			}
+			.intro {
+				text-align: center;
+				max-width: 760px;
+				margin: 0 auto 1.3rem;
+			}
+			.intro p {
+				margin: 0;
+				color: rgb(var(--muted));
 			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				gap: 1rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
 				width: calc(50% - 1rem);
+				background: rgba(255, 255, 255, 0.82);
+				border: 1px solid rgba(var(--line), 1);
+				border-radius: var(--radius-md);
+				padding: 0.8rem;
 			}
 			ul li * {
 				text-decoration: none;
@@ -36,8 +49,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul li:first-child {
 				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+				padding: 1.1rem;
 			}
 			ul li:first-child img {
 				width: 100%;
@@ -53,20 +65,20 @@ const posts = (await getCollection('blog')).sort(
 				display: block;
 			}
 			.title {
-				margin: 0;
-				color: rgb(var(--black));
+				margin: 0.2rem 0 0.15rem;
+				color: rgb(var(--ink));
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: rgb(var(--muted));
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: var(--accent-dark);
 			}
 			ul a:hover img {
-				box-shadow: var(--box-shadow);
+				box-shadow: var(--elevation);
 			}
 			@media (max-width: 720px) {
 				ul {
@@ -74,7 +86,7 @@ const posts = (await getCollection('blog')).sort(
 				}
 				ul li {
 					width: 100%;
-					text-align: center;
+					padding: 0.65rem;
 				}
 				ul li:first-child {
 					margin-bottom: 0;
@@ -88,6 +100,12 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<section class="intro">
+				<h1>Ideas, Systems, and Build Notes</h1>
+				<p>
+					Writing from CMMR on product execution, technical decisions, and incubation lessons.
+				</p>
+			</section>
 			<section>
 				<ul>
 					{
